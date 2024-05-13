@@ -10,6 +10,7 @@ namespace SocialMedia.Infrastruct.Repositories
 {
     public class PostRepository
     {
+        // create a method to get all posts
         public IEnumerable<Post>GetPosts()
         {
             var posts = Enumerable.Range(1, 10).Select(x => new Post
@@ -22,6 +23,7 @@ namespace SocialMedia.Infrastruct.Repositories
             }
 
             );
+
             return posts;
         }
 
