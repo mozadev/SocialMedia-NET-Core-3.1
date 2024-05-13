@@ -1,9 +1,10 @@
-﻿using SocialMedia.Core.Entities;
+﻿
 using System;
+using SocialMedia.Core.Entities;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SocialMedia.Infrastruct.Repositories
 {
@@ -11,7 +12,17 @@ namespace SocialMedia.Infrastruct.Repositories
     {
         public IEnumerable<Post>GetPosts()
         {
-            var posts = Enumerable.Empty<Post>();
+            var posts = Enumerable.Range(1, 10).Select(x => new Post
+            {
+                PostId = x,
+                Description = $"Description {x}",
+                Date = DateTime.Now,
+                Image = $"http://misapis.com/{x}",
+                UserId = x *2 ,
+            }
+
+            );
+            return posts;
         }
 
     }
