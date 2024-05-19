@@ -12,9 +12,10 @@ namespace SocialMedia.Api.Controllers
         [HttpGet]
         public IActionResult GetPosts() 
         {
+            // create a new instance of the PostRepository class
             var posts = new PostRepository().GetPosts();
-            // return a 200 status code with the posts
             return Ok(posts);
+             
         }
     }
 }
