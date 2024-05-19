@@ -13,6 +13,7 @@ namespace SocialMedia.Api.Controllers
         public IActionResult GetPosts() 
         {
             var posts = new PostRepository().GetPosts();
+            // return a 200 status code with the posts
             return Ok(posts);
         }
     }
